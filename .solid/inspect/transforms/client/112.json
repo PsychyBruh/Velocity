@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/Home.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type { Accessor, JSX } from \"solid-js\";\n\ninterface HomeProps {\n  id: string;\n  active: Accessor<string>;\n}\n\nexport default function Home(props: HomeProps): JSX.Element {\n  return (\n    <div\n      class={`w-full flex flex-col gap-5 px-7 ${\n        props.id === props.active() ? \"\" : \"hidden\"\n      }`}\n    >\n      <h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Home</h1>\n    </div>\n  );\n}\n",
+      "start": 1681131423946,
+      "end": 1681131424230
+    },
+    {
+      "name": "solid",
+      "result": "import { template as _$template } from \"solid-js/web\";\nimport { className as _$className } from \"solid-js/web\";\nimport { effect as _$effect } from \"solid-js/web\";\nconst _tmpl$ = /*#__PURE__*/_$template(`<div><h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Home</h1></div>`, 4);\nexport default function Home(props) {\n  return (() => {\n    const _el$ = _tmpl$.cloneNode(true);\n    _$effect(() => _$className(_el$, `w-full flex flex-col gap-5 px-7 ${props.id === props.active() ? \"\" : \"hidden\"}`));\n    return _el$;\n  })();\n}",
+      "start": 1681131424231,
+      "end": 1681131424238
+    }
+  ],
+  "virtual": false
+}

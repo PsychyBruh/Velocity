@@ -1,0 +1,1 @@
+import{P as r}from"./Protocol.b55961c7.js";import"./index.596163ac.js";const e=new r("about");e.register("blank","about:blank");e.register("newTab","/internal/newTab");e.register("preferences","/internal/preferences");e.register("history","/internal/history");const t=new r("view-source");t.register("*","/internal/view-source");

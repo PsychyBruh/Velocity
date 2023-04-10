@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/scripts/registerProtocols.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import Protocol from \"~/API/Protocol\";\n\nconst about = new Protocol(\"about\");\n\nabout.register(\"blank\", \"about:blank\");\nabout.register(\"newTab\", \"/internal/newTab\");\nabout.register(\"preferences\", \"/internal/preferences\");\nabout.register(\"history\", \"/internal/history\");\n\nconst viewSource = new Protocol(\"view-source\");\n\nviewSource.register(\"*\", \"/internal/view-source\");\n",
+      "start": 1681131425252,
+      "end": 1681131425899
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import Protocol from \"~/API/Protocol\";\nconst about = new Protocol(\"about\");\nabout.register(\"blank\", \"about:blank\");\nabout.register(\"newTab\", \"/internal/newTab\");\nabout.register(\"preferences\", \"/internal/preferences\");\nabout.register(\"history\", \"/internal/history\");\nconst viewSource = new Protocol(\"view-source\");\nviewSource.register(\"*\", \"/internal/view-source\");\n",
+      "start": 1681131425899,
+      "end": 1681131426002
+    }
+  ],
+  "virtual": false
+}

@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/util/registerSW.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "declare global {\n  var __uv$config: {\n    prefix: string;\n    bare: string | string[];\n    encodeUrl: (x: string) => string;\n    decodeUrl: (x: string) => string;\n  };\n}\n\nif (\"serviceWorker\" in navigator) {\n  navigator.serviceWorker.register(\"/sw.js\", {\n    scope: \"\"\n  });\n  navigator.serviceWorker.register(\"/proxy.sw.js\", {\n    scope: __uv$config.prefix\n  });\n}\n\nexport {};\n",
+      "start": 1681131423652,
+      "end": 1681131424157
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "if (\"serviceWorker\" in navigator) {\n  navigator.serviceWorker.register(\"/sw.js\", {\n    scope: \"\"\n  });\n  navigator.serviceWorker.register(\"/proxy.sw.js\", {\n    scope: __uv$config.prefix\n  });\n}\nexport {};\n",
+      "start": 1681131424158,
+      "end": 1681131424724
+    }
+  ],
+  "virtual": false
+}

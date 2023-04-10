@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/API/RuntimeModifier.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import EventEmitter from \"events\";\nimport { register } from \"~/manager/runtimeManager\";\n\ninterface Inject {\n  pattern: string;\n  script: (x: Window) => void;\n}\n\nexport default class RuntimeModifier extends EventEmitter {\n  name: string;\n  #injects: Inject[] = [];\n\n  constructor(name: string) {\n    super();\n    this.name = name;\n    register(this);\n  }\n\n  createInject(pattern: Inject[\"pattern\"], script: Inject[\"script\"]): void {\n    this.#injects.push({\n      pattern,\n      script\n    });\n  }\n\n  getInjects(): Inject[] {\n    return this.#injects;\n  }\n\n  \n}\n",
+      "start": 1681131431361,
+      "end": 1681131431772
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import EventEmitter from \"events\";\nimport { register } from \"~/manager/runtimeManager\";\nexport default class RuntimeModifier extends EventEmitter {\n  name;\n  #injects = [];\n  constructor(name) {\n    super();\n    this.name = name;\n    register(this);\n  }\n  createInject(pattern, script) {\n    this.#injects.push({\n      pattern,\n      script\n    });\n  }\n  getInjects() {\n    return this.#injects;\n  }\n}\n",
+      "start": 1681131431772,
+      "end": 1681131431933
+    }
+  ],
+  "virtual": false
+}

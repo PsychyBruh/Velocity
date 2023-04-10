@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/inputs/Keybind.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type { JSX } from \"solid-js\";\nimport type Keybind from \"~/API/Keybind\";\n\ninterface KeybindProps {\n  value: Keybind;\n}\n\nexport default function KeybindInput(props: KeybindProps): JSX.Element {\n  return (\n    <div class=\"flex items-center gap-2\">\n      <input\n        value={props.value.toString()}\n        type=\"text\"\n        class=\"bg-[#2A2A32] rounded py-[7px] px-[15px]\"\n        onKeyDown={(event) => {\n          event.preventDefault();\n          event.stopImmediatePropagation();\n\n          if (\n            !(event.target instanceof HTMLInputElement) ||\n            /^(control|alt|shift|meta)$/i.test(event.key)\n          )\n            return;\n\n          const options = {\n            id: props.value.id,\n            name: props.value.name,\n            description: props.value.description,\n            key: event.key,\n            ctrl: event.ctrlKey,\n            shift: event.shiftKey,\n            alt: event.altKey,\n            meta: event.metaKey,\n            callback: props.value.callback\n          };\n\n          const keybind = new window.parent.Velocity.Keybind(options);\n\n          event.target.value = keybind.toString();\n        }}\n      ></input>\n      <label class=\"font-light\">{props.value.description}</label>\n    </div>\n  );\n}\n",
+      "start": 1681131431290,
+      "end": 1681131431632
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { ssrAttribute as _$ssrAttribute } from \"solid-js/web\";\nimport { escape as _$escape } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"flex items-center gap-2\\\"><input\", \" type=\\\"text\\\" class=\\\"bg-[#2A2A32] rounded py-[7px] px-[15px]\\\"><label class=\\\"font-light\\\">\", \"</label></div>\"];\nexport default function KeybindInput(props) {\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), _$ssrAttribute(\"value\", _$escape(props.value.toString(), true), false), _$escape(props.value.description));\n}",
+      "start": 1681131431632,
+      "end": 1681131431637
+    }
+  ],
+  "virtual": false
+}

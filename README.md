@@ -58,7 +58,7 @@ Velocity exposes basic APIs in order to allow developers to easily create custom
 - [NodeJS version >=18](https://nodejs.org/)
 
 ```bash
-git clone https://github.com/cohenerickson/Velocity.git
+git clone https://github.com/PsychyBruh/Velocity.git
 cd Velocity
 npm i
 npm run build

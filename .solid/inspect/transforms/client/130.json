@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/manager/xenosManager.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import BareClient from \"@tomphttp/bare-client\";\nimport { bareClient, setBareClient } from \"~/data/appState\";\n\nexport default async function xenosPostManifest(manifestURL: string, meta: string) {\n  if (!bareClient()) {\n    const server =\n      typeof window.__uv$config.bare === \"string\"\n        ? window.__uv$config.bare\n        : window.__uv$config.bare[\n            Math.floor(Math.random() * window.__uv$config.bare.length)\n          ];\n    setBareClient(new BareClient(new URL(server, location.toString())));\n  }\n  const client = bareClient();\n  if (!client) return;\n\n  const request = await client.fetch(new URL(manifestURL, meta));\n  if (!request.ok) return;\n\n  const manifest = await request.json();\n  if (!manifest) return;\n\n  try {\n    // @ts-ignore\n    window.xen.parent.send(\"pwaRequest\", {\n      manifestURL,\n      meta,\n      manifest\n    });\n  } catch {}\n}\n",
+      "start": 1681131426653,
+      "end": 1681131427419
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import BareClient from \"@tomphttp/bare-client\";\nimport { bareClient, setBareClient } from \"~/data/appState\";\nexport default async function xenosPostManifest(manifestURL, meta) {\n  if (!bareClient()) {\n    const server = typeof window.__uv$config.bare === \"string\" ? window.__uv$config.bare : window.__uv$config.bare[Math.floor(Math.random() * window.__uv$config.bare.length)];\n    setBareClient(new BareClient(new URL(server, location.toString())));\n  }\n  const client = bareClient();\n  if (!client)\n    return;\n  const request = await client.fetch(new URL(manifestURL, meta));\n  if (!request.ok)\n    return;\n  const manifest = await request.json();\n  if (!manifest)\n    return;\n  try {\n    window.xen.parent.send(\"pwaRequest\", {\n      manifestURL,\n      meta,\n      manifest\n    });\n  } catch {\n  }\n}\n",
+      "start": 1681131427419,
+      "end": 1681131427434
+    }
+  ],
+  "virtual": false
+}

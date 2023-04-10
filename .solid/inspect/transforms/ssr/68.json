@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/General.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import Toggle from \"./inputs/Toggle\";\nimport type { Accessor, JSX } from \"solid-js\";\n\ninterface GeneralProps {\n  id: string;\n  active: Accessor<string>;\n}\n\nexport default function General(props: GeneralProps): JSX.Element {\n  return (\n    <div\n      class={`w-full flex flex-col gap-5 px-7 ${\n        props.id === props.active() ? \"\" : \"hidden\"\n      }`}\n    >\n      <h1 class=\"font-light text-[1.46em] leading-[1.3em]\">General</h1>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Startup</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Toggle\n            id=\"general.startup.openPreviousTabs\"\n            default={true}\n            label=\"Open previous tabs\"\n          />\n        </div>\n      </section>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Tabs</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Toggle\n            id=\"general.tabs.openWindowLinksInTab\"\n            default={true}\n            label=\"Open links in tabs instead of new windows\"\n          />\n          <Toggle\n            id=\"general.tabs.switchToMedia\"\n            default={false}\n            label=\"When you open a link, image or media in a new tab, switch to it imediately\"\n          />\n          <Toggle\n            id=\"general.tabs.confirmBeforeClosing\"\n            default={true}\n            label=\"Confirm before closing multiple tabs\"\n          />\n        </div>\n      </section>\n    </div>\n  );\n}\n",
+      "start": 1681131431083,
+      "end": 1681131431250
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { escape as _$escape } from \"solid-js/web\";\nimport { createComponent as _$createComponent } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"\", \"\\\"><h1 class=\\\"font-light text-[1.46em] leading-[1.3em]\\\">General</h1><section><h2 class=\\\"font-semibold text-lg\\\">Startup</h2><div class=\\\"flex flex-col gap-2 my-2\\\">\", \"</div></section><section><h2 class=\\\"font-semibold text-lg\\\">Tabs</h2><div class=\\\"flex flex-col gap-2 my-2\\\"><!--#-->\", \"<!--/--><!--#-->\", \"<!--/--><!--#-->\", \"<!--/--></div></section></div>\"];\nimport Toggle from \"./inputs/Toggle\";\nexport default function General(props) {\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), `w-full flex flex-col gap-5 px-7 ${props.id === props.active() ? \"\" : \"hidden\"}`, _$escape(_$createComponent(Toggle, {\n    id: \"general.startup.openPreviousTabs\",\n    \"default\": true,\n    label: \"Open previous tabs\"\n  })), _$escape(_$createComponent(Toggle, {\n    id: \"general.tabs.openWindowLinksInTab\",\n    \"default\": true,\n    label: \"Open links in tabs instead of new windows\"\n  })), _$escape(_$createComponent(Toggle, {\n    id: \"general.tabs.switchToMedia\",\n    \"default\": false,\n    label: \"When you open a link, image or media in a new tab, switch to it imediately\"\n  })), _$escape(_$createComponent(Toggle, {\n    id: \"general.tabs.confirmBeforeClosing\",\n    \"default\": true,\n    label: \"Confirm before closing multiple tabs\"\n  })));\n}",
+      "start": 1681131431251,
+      "end": 1681131431258
+    }
+  ],
+  "virtual": false
+}

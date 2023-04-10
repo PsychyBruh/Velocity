@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/data/appState.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type BareClient from \"@tomphttp/bare-client\";\nimport { createSignal } from \"solid-js\";\nimport type Bookmark from \"~/API/Bookmark\";\nimport type Keybind from \"~/API/Keybind\";\nimport type Protocol from \"~/API/Protocol\";\nimport type Tab from \"~/API/Tab\";\nimport type AddonEntry from \"~/types/AddonEntry\";\n\nexport const [tabs, setTabs] = createSignal<Tab[]>([]);\nexport const [tabStack, setTabStack] = createSignal<Set<Tab>>(new Set());\nexport const [bareClient, setBareClient] = createSignal<\n  BareClient | undefined\n>();\nexport const [bookmarks, setBookmarks] = createSignal<Bookmark[]>([]);\nexport const [bookmarksShown, setBookmarksShown] = createSignal<boolean>(true);\nexport const [protocols, setProtocols] = createSignal<Protocol[]>([]);\nexport const [keybinds, setKeybinds] = createSignal<Keybind[]>([]);\nexport const [addons, setAddons] = createSignal<AddonEntry[]>([]);\n",
+      "start": 1681131423216,
+      "end": 1681131423550
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { createSignal } from \"solid-js\";\nexport const [tabs, setTabs] = createSignal([]);\nexport const [tabStack, setTabStack] = createSignal(/* @__PURE__ */ new Set());\nexport const [bareClient, setBareClient] = createSignal();\nexport const [bookmarks, setBookmarks] = createSignal([]);\nexport const [bookmarksShown, setBookmarksShown] = createSignal(true);\nexport const [protocols, setProtocols] = createSignal([]);\nexport const [keybinds, setKeybinds] = createSignal([]);\nexport const [addons, setAddons] = createSignal([]);\n",
+      "start": 1681131423550,
+      "end": 1681131423556
+    }
+  ],
+  "virtual": false
+}

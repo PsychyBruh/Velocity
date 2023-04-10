@@ -1,0 +1,16 @@
+{
+  "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/index.js",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/// <reference types=\"./index.d.ts\" />\n\n/*\n Copyright (c) 2022 Gildas Lormeau. All rights reserved.\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions are met:\n\n 1. Redistributions of source code must retain the above copyright notice,\n this list of conditions and the following disclaimer.\n\n 2. Redistributions in binary form must reproduce the above copyright \n notice, this list of conditions and the following disclaimer in \n the documentation and/or other materials provided with the distribution.\n\n 3. The names of the authors may not be used to endorse or promote products\n derived from this software without specific prior written permission.\n\n THIS SOFTWARE IS PROVIDED ''AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,\n INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND\n FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL JCRAFT,\n INC. OR ANY CONTRIBUTORS TO THIS SOFTWARE BE LIABLE FOR ANY DIRECT, INDIRECT,\n INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA,\n OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF\n LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING\n NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,\n EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n */\n\nimport { Deflate } from \"./lib/core/streams/codecs/deflate.js\";\nimport { Inflate } from \"./lib/core/streams/codecs/inflate.js\";\nimport { configure } from \"./lib/core/configuration.js\";\nimport { getMimeType } from \"./lib/core/util/mime-type.js\";\nimport { terminateWorkers } from \"./lib/core/codec-pool.js\";\n\nconfigure({ Deflate, Inflate });\n\nexport {\n\tfs,\n\tconfigure,\n\tinitShimAsyncCodec,\n\tZipReader,\n\tZipWriter,\n\tReader,\n\tWriter,\n\tTextReader,\n\tTextWriter,\n\tData64URIReader,\n\tData64URIWriter,\n\tBlobReader,\n\tBlobWriter,\n\tHttpReader,\n\tHttpRangeReader,\n\tUint8ArrayWriter,\n\tUint8ArrayReader,\n\tSplitZipReader,\n\tSplitZipWriter,\n\tSplitDataReader,\n\tSplitDataWriter,\n\tERR_HTTP_RANGE,\n\tERR_BAD_FORMAT,\n\tERR_EOCDR_NOT_FOUND,\n\tERR_EOCDR_ZIP64_NOT_FOUND,\n\tERR_EOCDR_LOCATOR_ZIP64_NOT_FOUND,\n\tERR_CENTRAL_DIRECTORY_NOT_FOUND,\n\tERR_LOCAL_FILE_HEADER_NOT_FOUND,\n\tERR_EXTRAFIELD_ZIP64_NOT_FOUND,\n\tERR_ENCRYPTED,\n\tERR_UNSUPPORTED_ENCRYPTION,\n\tERR_UNSUPPORTED_COMPRESSION,\n\tERR_INVALID_SIGNATURE,\n\tERR_INVALID_PASSWORD,\n\tERR_DUPLICATED_NAME,\n\tERR_INVALID_COMMENT,\n\tERR_INVALID_ENTRY_NAME,\n\tERR_INVALID_ENTRY_COMMENT,\n\tERR_INVALID_VERSION,\n\tERR_INVALID_EXTRAFIELD_TYPE,\n\tERR_INVALID_EXTRAFIELD_DATA,\n\tERR_INVALID_ENCRYPTION_STRENGTH,\n\tERR_UNSUPPORTED_FORMAT,\n\tERR_SPLIT_ZIP_FILE,\n\tERR_ITERATOR_COMPLETED_TOO_SOON\n} from \"./lib/zip-fs.js\";\nexport { getMimeType, terminateWorkers };",
+      "start": 1681131426025,
+      "end": 1681131426624
+    }
+  ],
+  "virtual": false
+}

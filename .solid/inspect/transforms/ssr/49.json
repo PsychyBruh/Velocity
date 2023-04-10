@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/API/Bookmark.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { bookmarks, setBookmarks } from \"~/data/appState\";\n\n\ninterface BookmarkOptions {\n  name: string;\n  url: string;\n  icon: string;\n  id?: number;\n}\n\nexport default class Bookmark {\n  name: string;\n  url: string;\n  icon: string;\n  id: number;\n\n  constructor(options: BookmarkOptions) {\n    this.name = options.name;\n    this.url = options.url || \"about:newTab\";\n    this.icon = options.icon;\n    this.id = options.id ?? Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);\n\n    setBookmarks([...bookmarks(), this]);\n\n    this.#updateStorage();\n  }\n\n  delete() {\n    setBookmarks(bookmarks().filter((x) => x.id !== this.id));\n    this.#updateStorage();\n  }\n\n  #updateStorage () {\n    localStorage.setItem(\"bookmarks\", JSON.stringify(Array.from(bookmarks())));\n  }\n}",
+      "start": 1681131430840,
+      "end": 1681131431076
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { bookmarks, setBookmarks } from \"~/data/appState\";\nexport default class Bookmark {\n  name;\n  url;\n  icon;\n  id;\n  constructor(options) {\n    this.name = options.name;\n    this.url = options.url || \"about:newTab\";\n    this.icon = options.icon;\n    this.id = options.id ?? Math.floor(Math.random() * Number.MAX_SAFE_INTEGER);\n    setBookmarks([...bookmarks(), this]);\n    this.#updateStorage();\n  }\n  delete() {\n    setBookmarks(bookmarks().filter((x) => x.id !== this.id));\n    this.#updateStorage();\n  }\n  #updateStorage() {\n    localStorage.setItem(\"bookmarks\", JSON.stringify(Array.from(bookmarks())));\n  }\n}\n",
+      "start": 1681131431076,
+      "end": 1681131431111
+    }
+  ],
+  "virtual": false
+}

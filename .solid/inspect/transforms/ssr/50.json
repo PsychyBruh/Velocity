@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/API/ContextItem.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "type ContextItemOptions =\n  | {\n      text: string;\n      onClick: () => void;\n    }\n  | {\n      separator: true;\n    };\n\nexport default class ContextItem {\n  #text?: string;\n  #onClick?: () => void;\n  #separator?: boolean;\n\n  constructor(options: ContextItemOptions) {\n    if (\"separator\" in options) {\n      this.#separator = options.separator;\n      return;\n    }\n    this.#text = options.text;\n    this.#onClick = options.onClick;\n  }\n\n  get text(): string | undefined {\n    return this.#text;\n  }\n\n  get onClick(): (() => void) | undefined {\n    return this.#onClick;\n  }\n\n  get separator(): boolean | undefined {\n    return this.#separator;\n  }\n}\n",
+      "start": 1681131431227,
+      "end": 1681131431581
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default class ContextItem {\n  #text;\n  #onClick;\n  #separator;\n  constructor(options) {\n    if (\"separator\" in options) {\n      this.#separator = options.separator;\n      return;\n    }\n    this.#text = options.text;\n    this.#onClick = options.onClick;\n  }\n  get text() {\n    return this.#text;\n  }\n  get onClick() {\n    return this.#onClick;\n  }\n  get separator() {\n    return this.#separator;\n  }\n}\n",
+      "start": 1681131431581,
+      "end": 1681131431746
+    }
+  ],
+  "virtual": false
+}

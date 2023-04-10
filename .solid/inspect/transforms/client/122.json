@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/manager/clickManager.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { getActiveTab } from \"~/util/\";\nimport Tab from \"~/API/Tab\";\nimport type Preferences from \"~/types/Preferences\";\n\nexport default function clickHandler(event: MouseEvent) {\n  const element = getAnchor(event.target);\n  if (element && element.href) {\n    if (event.ctrlKey) {\n      open(event, element.href, false, false);\n    } else if (event.shiftKey) {\n      open(event, element.href, true, false);\n    } else if (element.target === \"_blank\") {\n      open(event, element.href, false, true);\n    } else if (element.target === \"_parent\") {\n      navigate(event, element.href);\n    } else if (element.target === \"_top\") {\n      navigate(event, element.href);\n    }\n  }\n}\n\nexport function open(\n  event: MouseEvent | undefined,\n  url: string,\n  isWindow: boolean,\n  isBlank: boolean\n) {\n  if (event) event.preventDefault();\n  const preferences: Preferences = JSON.parse(\n    localStorage.getItem(\"preferences\") || \"{}\"\n  );\n  if (isWindow && !preferences[\"general.tabs.openWindowLinksInTab\"]) {\n    window.open(`${location.origin}?url=${encodeURIComponent(url)}`);\n  } else {\n    new Tab(url, preferences[\"general.tabs.switchToMedia\"] || isBlank);\n  }\n}\n\nfunction navigate(event: MouseEvent, url: string) {\n  event.preventDefault();\n  getActiveTab().navigate(url);\n}\n\nfunction getAnchor(element: EventTarget | null): HTMLAnchorElement | undefined {\n  if (!element) return;\n  const target = element as HTMLElement;\n  if (target.tagName === \"A\") {\n    return target as HTMLAnchorElement;\n  } else if (target.parentElement) {\n    return getAnchor(target.parentElement);\n  } else {\n    return;\n  }\n}\n",
+      "start": 1681131425898,
+      "end": 1681131426597
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { getActiveTab } from \"~/util/\";\nimport Tab from \"~/API/Tab\";\nexport default function clickHandler(event) {\n  const element = getAnchor(event.target);\n  if (element && element.href) {\n    if (event.ctrlKey) {\n      open(event, element.href, false, false);\n    } else if (event.shiftKey) {\n      open(event, element.href, true, false);\n    } else if (element.target === \"_blank\") {\n      open(event, element.href, false, true);\n    } else if (element.target === \"_parent\") {\n      navigate(event, element.href);\n    } else if (element.target === \"_top\") {\n      navigate(event, element.href);\n    }\n  }\n}\nexport function open(event, url, isWindow, isBlank) {\n  if (event)\n    event.preventDefault();\n  const preferences = JSON.parse(\n    localStorage.getItem(\"preferences\") || \"{}\"\n  );\n  if (isWindow && !preferences[\"general.tabs.openWindowLinksInTab\"]) {\n    window.open(`${location.origin}?url=${encodeURIComponent(url)}`);\n  } else {\n    new Tab(url, preferences[\"general.tabs.switchToMedia\"] || isBlank);\n  }\n}\nfunction navigate(event, url) {\n  event.preventDefault();\n  getActiveTab().navigate(url);\n}\nfunction getAnchor(element) {\n  if (!element)\n    return;\n  const target = element;\n  if (target.tagName === \"A\") {\n    return target;\n  } else if (target.parentElement) {\n    return getAnchor(target.parentElement);\n  } else {\n    return;\n  }\n}\n",
+      "start": 1681131426597,
+      "end": 1681131426639
+    }
+  ],
+  "virtual": false
+}

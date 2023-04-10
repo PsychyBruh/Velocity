@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/API/index.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import ExtensionReader from \"./AddonReader\";\nimport Bookmark from \"./Bookmark\";\nimport ContextItem from \"./ContextItem\";\nimport History from \"./History\";\nimport Keybind from \"./Keybind\";\nimport Protocol from \"./Protocol\";\nimport RuntimeModifier from \"./RuntimeModifier\";\nimport Tab from \"./Tab\";\nimport { bindIFrameMousemove } from \"~/components/ContextMenu\";\nimport { bookmarks, protocols, tabs, keybinds } from \"~/data/appState\";\n\nconst Velocity = new Proxy(\n  {\n    Tab,\n    getTabs: tabs,\n    Protocol,\n    getProtocols: protocols,\n    Bookmark,\n    getBookmarks: bookmarks,\n    ContextItem,\n    Keybind,\n    getKeybinds: keybinds,\n    bindIFrameMousemove,\n    history: new History(),\n    postManifest: false,\n    ExtensionReader,\n    RuntimeModifier\n  },\n  {\n    get(target, prop: string, reciever) {\n      if (![\"RuntimeModifier\", \"history\"].includes(prop)) {\n        console.warn(\n          `Using Velocity.${prop} is deprecated, please use RuntimeModifier instead.`\n        );\n      }\n\n      return Reflect.get(target, prop, reciever);\n    }\n  }\n);\n\ndeclare global {\n  interface Window {\n    Velocity: typeof Velocity;\n  }\n}\n\nwindow.Velocity = Velocity;\n\nexport default Velocity;\n",
+      "start": 1681131423843,
+      "end": 1681131424164
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import ExtensionReader from \"./AddonReader\";\nimport Bookmark from \"./Bookmark\";\nimport ContextItem from \"./ContextItem\";\nimport History from \"./History\";\nimport Keybind from \"./Keybind\";\nimport Protocol from \"./Protocol\";\nimport RuntimeModifier from \"./RuntimeModifier\";\nimport Tab from \"./Tab\";\nimport { bindIFrameMousemove } from \"~/components/ContextMenu\";\nimport { bookmarks, protocols, tabs, keybinds } from \"~/data/appState\";\nconst Velocity = new Proxy(\n  {\n    Tab,\n    getTabs: tabs,\n    Protocol,\n    getProtocols: protocols,\n    Bookmark,\n    getBookmarks: bookmarks,\n    ContextItem,\n    Keybind,\n    getKeybinds: keybinds,\n    bindIFrameMousemove,\n    history: new History(),\n    postManifest: false,\n    ExtensionReader,\n    RuntimeModifier\n  },\n  {\n    get(target, prop, reciever) {\n      if (![\"RuntimeModifier\", \"history\"].includes(prop)) {\n        console.warn(\n          `Using Velocity.${prop} is deprecated, please use RuntimeModifier instead.`\n        );\n      }\n      return Reflect.get(target, prop, reciever);\n    }\n  }\n);\nwindow.Velocity = Velocity;\nexport default Velocity;\n",
+      "start": 1681131424164,
+      "end": 1681131424724
+    }
+  ],
+  "virtual": false
+}

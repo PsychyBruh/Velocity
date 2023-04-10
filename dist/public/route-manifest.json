@@ -1,0 +1,119 @@
+{
+  "/": [
+    {
+      "type": "script",
+      "href": "/assets/index.aa74a4d7.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/index.596163ac.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/index.c5dd7436.css"
+    },
+    {
+      "type": "script",
+      "href": "/assets/Favicon.2ee1c950.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/BareClient.06787bc0.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/Tab.baaf254f.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/url.064866d1.js"
+    }
+  ],
+  "/internal/history": [
+    {
+      "type": "script",
+      "href": "/assets/history.6f73ab90.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/index.596163ac.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/index.c5dd7436.css"
+    },
+    {
+      "type": "script",
+      "href": "/assets/Favicon.2ee1c950.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/BareClient.06787bc0.js"
+    }
+  ],
+  "/internal/newTab": [
+    {
+      "type": "script",
+      "href": "/assets/newTab.398b9ced.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/index.596163ac.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/index.c5dd7436.css"
+    },
+    {
+      "type": "script",
+      "href": "/assets/url.064866d1.js"
+    }
+  ],
+  "/internal/preferences": [
+    {
+      "type": "script",
+      "href": "/assets/preferences.3c07fae6.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/index.596163ac.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/index.c5dd7436.css"
+    }
+  ],
+  "/internal/view-source": [
+    {
+      "type": "script",
+      "href": "/assets/view-source.752464d2.js"
+    },
+    {
+      "type": "script",
+      "href": "/assets/index.596163ac.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/index.c5dd7436.css"
+    },
+    {
+      "type": "script",
+      "href": "/assets/BareClient.06787bc0.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/view-source.5c045b07.css"
+    }
+  ],
+  "entry-client": [],
+  "index.html": [
+    {
+      "type": "script",
+      "href": "/assets/index.596163ac.js"
+    },
+    {
+      "type": "style",
+      "href": "/assets/index.c5dd7436.css"
+    }
+  ]
+}

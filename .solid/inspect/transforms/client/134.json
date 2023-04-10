@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/routes/internal/newTab.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { createSignal, onMount } from \"solid-js\";\nimport type { JSX } from \"solid-js\";\nimport { Title } from \"solid-start\";\nimport { engines, preferences } from \"~/util/\";\nimport { generateProxyUrl } from \"~/util/url\";\n\nexport default function NewTab(): JSX.Element {\n  const [name, setName] = createSignal<string>(\"Google\");\n  function handleKeydown(event: KeyboardEvent) {\n    if (event.key === \"Enter\") {\n      const element = event.target as HTMLInputElement;\n      const query = element.value;\n      location.href = generateProxyUrl(query);\n    }\n  }\n\n  onMount(() => {\n    setInterval(() => {\n      setName(\n        engines[preferences()[\"search.defaults.searchEngine\"] || \"google\"].name\n      );\n    }, 100);\n  });\n\n  return (\n    <main class=\"flex flex-col w-full h-full items-center\" id=\"ntp\">\n      <Title>New Tab</Title>\n      {/*  */}\n      <div class=\"flex items-center gap-5 m-5 mt-32\">\n        <div class=\"h-20 w-20\" id=\"logo\"></div>\n        <h1 class=\"text-4xl font-semibold\">Velocity</h1>\n      </div>\n      <input\n        class=\"px-5 py-4 rounded-md text-sm m-5 md:w-1/2 focus:ring-0 focus:outline-none shadow-lg focus:shadow-2xl\"\n        placeholder={`Search with ${name()} or enter address`}\n        onKeyDown={handleKeydown}\n      ></input>\n    </main>\n  );\n}\n",
+      "start": 1681131423538,
+      "end": 1681131423761
+    },
+    {
+      "name": "solid",
+      "result": "import { template as _$template } from \"solid-js/web\";\nimport { delegateEvents as _$delegateEvents } from \"solid-js/web\";\nimport { setAttribute as _$setAttribute } from \"solid-js/web\";\nimport { effect as _$effect } from \"solid-js/web\";\nimport { insert as _$insert } from \"solid-js/web\";\nimport { createComponent as _$createComponent } from \"solid-js/web\";\nconst _tmpl$ = /*#__PURE__*/_$template(`<main class=\"flex flex-col w-full h-full items-center\" id=\"ntp\"><div class=\"flex items-center gap-5 m-5 mt-32\"><div class=\"h-20 w-20\" id=\"logo\"></div><h1 class=\"text-4xl font-semibold\">Velocity</h1></div><input class=\"px-5 py-4 rounded-md text-sm m-5 md:w-1/2 focus:ring-0 focus:outline-none shadow-lg focus:shadow-2xl\"></main>`, 9);\nimport { createSignal, onMount } from \"solid-js\";\nimport { Title } from \"solid-start\";\nimport { engines, preferences } from \"~/util/\";\nimport { generateProxyUrl } from \"~/util/url\";\nexport default function NewTab() {\n  const [name, setName] = createSignal(\"Google\");\n  function handleKeydown(event) {\n    if (event.key === \"Enter\") {\n      const element = event.target;\n      const query = element.value;\n      location.href = generateProxyUrl(query);\n    }\n  }\n  onMount(() => {\n    setInterval(() => {\n      setName(engines[preferences()[\"search.defaults.searchEngine\"] || \"google\"].name);\n    }, 100);\n  });\n  return (() => {\n    const _el$ = _tmpl$.cloneNode(true),\n      _el$2 = _el$.firstChild,\n      _el$3 = _el$2.nextSibling;\n    _$insert(_el$, _$createComponent(Title, {\n      children: \"New Tab\"\n    }), _el$2);\n    _el$3.$$keydown = handleKeydown;\n    _$effect(() => _$setAttribute(_el$3, \"placeholder\", `Search with ${name()} or enter address`));\n    return _el$;\n  })();\n}\n_$delegateEvents([\"keydown\"]);",
+      "start": 1681131423763,
+      "end": 1681131423804
+    }
+  ],
+  "virtual": false
+}

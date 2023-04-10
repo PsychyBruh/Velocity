@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/node_modules/mime-db/index.js",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "commonjs"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*!\n * mime-db\n * Copyright(c) 2014 Jonathan Ong\n * Copyright(c) 2015-2022 Douglas Christopher Wilson\n * MIT Licensed\n */\n\n/**\n * Module exports.\n */\n\nmodule.exports = require('./db.json')\n",
+      "start": 1681131423572,
+      "end": 1681131424013
+    },
+    {
+      "name": "commonjs",
+      "result": "/*!\n * mime-db\n * Copyright(c) 2014 Jonathan Ong\n * Copyright(c) 2015-2022 Douglas Christopher Wilson\n * MIT Licensed\n */\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\nimport { __module as mimeDbModule, exports as mimeDb } from \"\\u0000/workspaces/Velocity/node_modules/mime-db/index.js?commonjs-module\"\nimport require$$0 from \"\\u0000/workspaces/Velocity/node_modules/mime-db/db.json?commonjs-proxy\";\n\n(function (module) {\n\t/**\n\t * Module exports.\n\t */\n\n\tmodule.exports = require$$0\n} (mimeDbModule));\n\nexport default /*@__PURE__*/commonjsHelpers.getDefaultExportFromCjs(mimeDb);\nexport { mimeDb as __moduleExports };",
+      "start": 1681131424014,
+      "end": 1681131425585
+    }
+  ],
+  "virtual": false
+}

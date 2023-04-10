@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/manager/keybindManager.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { keybinds } from \"~/data/appState\";\n\nexport default function keybindManager(event: KeyboardEvent) {\n  for (const keybind of keybinds()) {\n    if (\n      event.key.toLowerCase() === keybind.key.toLowerCase() &&\n      event.ctrlKey === keybind.ctrl &&\n      event.shiftKey === keybind.shift &&\n      event.altKey === keybind.alt &&\n      event.metaKey === keybind.meta\n    ) {\n      event.preventDefault();\n      keybind.callback(event);\n    }\n  }\n}\n",
+      "start": 1681131430951,
+      "end": 1681131431224
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { keybinds } from \"~/data/appState\";\nexport default function keybindManager(event) {\n  for (const keybind of keybinds()) {\n    if (event.key.toLowerCase() === keybind.key.toLowerCase() && event.ctrlKey === keybind.ctrl && event.shiftKey === keybind.shift && event.altKey === keybind.alt && event.metaKey === keybind.meta) {\n      event.preventDefault();\n      keybind.callback(event);\n    }\n  }\n}\n",
+      "start": 1681131431224,
+      "end": 1681131431300
+    }
+  ],
+  "virtual": false
+}

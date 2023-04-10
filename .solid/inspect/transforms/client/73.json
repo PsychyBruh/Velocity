@@ -1,0 +1,37 @@
+{
+  "id": "/workspaces/Velocity/node_modules/solid-start/root/FileRoutes.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid-start-file-system-router",
+    "solid",
+    "vite:build-import-analysis"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/// <reference path=\"../server/types.tsx\" />\n\n// @ts-expect-error\nvar fileRoutes = $FILE_ROUTES;\n\n/**\n * Routes are the file system based routes, used by Solid App Router to show the current page according to the URL.\n */\n\nconst FileRoutes = () => {\n  return fileRoutes;\n};\n\nexport default FileRoutes;\nexport { fileRoutes };\n",
+      "start": 1681131423216,
+      "end": 1681131423523
+    },
+    {
+      "name": "solid-start-file-system-router",
+      "result": "/// <reference path=\"../server/types.tsx\" />\n\n// @ts-expect-error\n\n  import { lazy } from 'solid-js';\n  \n  const fileRoutes = /*#__PURE__*/ [\n{\ncomponent: lazy(() => import('/workspaces/Velocity/src/routes/index.tsx')),\n path: \"/\" \n},\n{\ncomponent: lazy(() => import('/workspaces/Velocity/src/routes/internal/history.tsx')),\n path: \"/internal/history\" \n},\n{\ncomponent: lazy(() => import('/workspaces/Velocity/src/routes/internal/newTab.tsx')),\n path: \"/internal/newTab\" \n},\n{\ncomponent: lazy(() => import('/workspaces/Velocity/src/routes/internal/preferences.tsx')),\n path: \"/internal/preferences\" \n},\n{\ncomponent: lazy(() => import('/workspaces/Velocity/src/routes/internal/view-source.tsx')),\n path: \"/internal/view-source\" \n}\n];\n\n/**\n * Routes are the file system based routes, used by Solid App Router to show the current page according to the URL.\n */\n\nconst FileRoutes = () => {\n  return fileRoutes;\n};\n\nexport default FileRoutes;\nexport { fileRoutes };\n",
+      "start": 1681131423523,
+      "end": 1681131423523
+    },
+    {
+      "name": "solid",
+      "result": "/// <reference path=\"../server/types.tsx\" />\n\n// @ts-expect-error\n\nimport { lazy } from 'solid-js';\nconst fileRoutes = /*#__PURE__*/[{\n  component: lazy(() => import('/workspaces/Velocity/src/routes/index.tsx')),\n  path: \"/\"\n}, {\n  component: lazy(() => import('/workspaces/Velocity/src/routes/internal/history.tsx')),\n  path: \"/internal/history\"\n}, {\n  component: lazy(() => import('/workspaces/Velocity/src/routes/internal/newTab.tsx')),\n  path: \"/internal/newTab\"\n}, {\n  component: lazy(() => import('/workspaces/Velocity/src/routes/internal/preferences.tsx')),\n  path: \"/internal/preferences\"\n}, {\n  component: lazy(() => import('/workspaces/Velocity/src/routes/internal/view-source.tsx')),\n  path: \"/internal/view-source\"\n}];\n\n/**\n * Routes are the file system based routes, used by Solid App Router to show the current page according to the URL.\n */\n\nconst FileRoutes = () => {\n  return fileRoutes;\n};\nexport default FileRoutes;\nexport { fileRoutes };",
+      "start": 1681131423523,
+      "end": 1681131423531
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper\";/// <reference path=\"../server/types.tsx\" />\n\n// @ts-expect-error\n\nimport { lazy } from 'solid-js';\nconst fileRoutes = /*#__PURE__*/[{\n  component: lazy(() => __vitePreload(() => import('/workspaces/Velocity/src/routes/index.tsx'),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0)),\n  path: \"/\"\n}, {\n  component: lazy(() => __vitePreload(() => import('/workspaces/Velocity/src/routes/internal/history.tsx'),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0)),\n  path: \"/internal/history\"\n}, {\n  component: lazy(() => __vitePreload(() => import('/workspaces/Velocity/src/routes/internal/newTab.tsx'),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0)),\n  path: \"/internal/newTab\"\n}, {\n  component: lazy(() => __vitePreload(() => import('/workspaces/Velocity/src/routes/internal/preferences.tsx'),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0)),\n  path: \"/internal/preferences\"\n}, {\n  component: lazy(() => __vitePreload(() => import('/workspaces/Velocity/src/routes/internal/view-source.tsx'),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0)),\n  path: \"/internal/view-source\"\n}];\n\n/**\n * Routes are the file system based routes, used by Solid App Router to show the current page according to the URL.\n */\n\nconst FileRoutes = () => {\n  return fileRoutes;\n};\nexport default FileRoutes;\nexport { fileRoutes };",
+      "start": 1681131423532,
+      "end": 1681131423532
+    }
+  ],
+  "virtual": false
+}

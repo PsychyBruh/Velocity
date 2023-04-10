@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/Bookmark.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import Favicon from \"./Favicon\";\nimport { createSignal } from \"solid-js\";\nimport type { JSX } from \"solid-js\";\nimport type BookmarkAPI from \"~/API/Bookmark\";\nimport ContextItem from \"~/API/ContextItem\";\nimport Tab from \"~/API/Tab\";\nimport { open } from \"~/manager/clickManager\";\nimport { getActiveTab } from \"~/util\";\n\ninterface BookmarkProps {\n  sortable: any;\n  bookmark: BookmarkAPI;\n}\n\nexport default function Bookmark(props: BookmarkProps): JSX.Element {\n  const { sortable, bookmark } = props;\n\n  function handleClick(event: MouseEvent) {\n    if (/^javascript:/.test(bookmark.url)) {\n      getActiveTab().executeScript(\n        decodeURIComponent(bookmark.url.replace(/^javascript:/, \"\"))\n      );\n    } else {\n      if (event.ctrlKey) {\n        new Tab(bookmark.url, false);\n      } else {\n        getActiveTab().navigate(bookmark.url);\n      }\n    }\n  }\n\n  return (\n    <div\n      // @ts-ignore\n      use:sortable\n      onClick={handleClick}\n      class=\"toolbarbutton-1 h-6 flex items-center gap-1 rounded cursor-default px-1 select-none\"\n      oncontextmenu={(event: MouseEvent & { data?: ContextItem[] }): void => {\n        event.data = [\n          new ContextItem({\n            text: \"Open in new tab\",\n            onClick: () => {\n              open(event, bookmark.url, false, true);\n            }\n          }),\n          new ContextItem({\n            separator: true\n          }),\n          new ContextItem({\n            text: \"Delete\",\n            onClick: () => {\n              bookmark.delete();\n            }\n          }),\n          new ContextItem({\n            separator: true\n          })\n        ];\n      }}\n    >\n      <div class=\"w-[15px] h-[15px]\">\n        <Favicon src={createSignal<string>(bookmark.icon)[0]}></Favicon>\n      </div>\n      {bookmark.name}\n    </div>\n  );\n}\n",
+      "start": 1681131431225,
+      "end": 1681131431380
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { escape as _$escape } from \"solid-js/web\";\nimport { createComponent as _$createComponent } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"toolbarbutton-1 h-6 flex items-center gap-1 rounded cursor-default px-1 select-none\\\"><div class=\\\"w-[15px] h-[15px]\\\">\", \"</div><!--#-->\", \"<!--/--></div>\"];\nimport Favicon from \"./Favicon\";\nimport { createSignal } from \"solid-js\";\nimport ContextItem from \"~/API/ContextItem\";\nimport Tab from \"~/API/Tab\";\nimport { open } from \"~/manager/clickManager\";\nimport { getActiveTab } from \"~/util\";\nexport default function Bookmark(props) {\n  const {\n    sortable,\n    bookmark\n  } = props;\n  function handleClick(event) {\n    if (/^javascript:/.test(bookmark.url)) {\n      getActiveTab().executeScript(decodeURIComponent(bookmark.url.replace(/^javascript:/, \"\")));\n    } else {\n      if (event.ctrlKey) {\n        new Tab(bookmark.url, false);\n      } else {\n        getActiveTab().navigate(bookmark.url);\n      }\n    }\n  }\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), _$escape(_$createComponent(Favicon, {\n    get src() {\n      return createSignal(bookmark.icon)[0];\n    }\n  })), _$escape(bookmark.name));\n}",
+      "start": 1681131431380,
+      "end": 1681131431387
+    }
+  ],
+  "virtual": false
+}

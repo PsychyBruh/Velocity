@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/inputs/Toggle.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { JSX, createEffect, createSignal, onMount } from \"solid-js\";\nimport Preferences from \"~/types/Preferences\";\nimport { preferences } from \"~/util/\";\n\n\ninterface ToggleProps {\n  id: keyof Preferences;\n  label: string;\n  default: boolean;\n}\n\nexport default function Toggle(props: ToggleProps): JSX.Element {\n  const [getState, setState] = createSignal<boolean>(props.default);\n\n  onMount(() => {\n    setState(preferences()[props.id] ?? (props.default as any));\n  });\n\n  createEffect(() => {\n    localStorage.setItem(\n      \"preferences\",\n      JSON.stringify(\n        Object.assign(preferences(), {\n          [props.id]: getState()\n        })\n      )\n    );\n  });\n\n  function onChange(element: HTMLInputElement) {\n    element.addEventListener(\"change\", () => {\n      setState(element.checked);\n    });\n  }\n\n  return (\n    <div class=\"flex items-center gap-2\">\n      <input\n        class=\"hidden\"\n        id={props.id}\n        type=\"checkbox\"\n        checked={getState()}\n        ref={onChange}\n      />\n      <label\n        class={`flex items-center gap-[6px] font-light before:content-[\\s] before:rounded-[2px] before:inline-block before:h-4 before:w-4 ${\n          getState()\n            ? \"before:bg-[#0df] hover:before:bg-[#80EBFF] before:bg-[url('/icons/check.svg')]\"\n            : \"before:bg-[#2B2A33] hover:before:bg-[#52525E] before:outline before:outline-1 before:outline-[#7A7A81]\"\n        } before:bg-center before:bg-norepeat`}\n        style=\"-moz-box-align: center;\"\n        for={props.id}\n      >\n        {props.label}\n      </label>\n    </div>\n  );\n}",
+      "start": 1681131431272,
+      "end": 1681131431624
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { ssrAttribute as _$ssrAttribute } from \"solid-js/web\";\nimport { escape as _$escape } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"flex items-center gap-2\\\"><input class=\\\"hidden\\\"\", \" type=\\\"checkbox\\\"\", \"><label class=\\\"\", \"\\\" style=\\\"-moz-box-align: center;\\\"\", \">\", \"</label></div>\"];\nimport { createEffect, createSignal, onMount } from \"solid-js\";\nimport { preferences } from \"~/util/\";\nexport default function Toggle(props) {\n  const [getState, setState] = createSignal(props.default);\n  onMount(() => {\n    setState(preferences()[props.id] ?? props.default);\n  });\n  createEffect(() => {\n    localStorage.setItem(\"preferences\", JSON.stringify(Object.assign(preferences(), {\n      [props.id]: getState()\n    })));\n  });\n  function onChange(element) {\n    element.addEventListener(\"change\", () => {\n      setState(element.checked);\n    });\n  }\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), _$ssrAttribute(\"id\", _$escape(props.id, true), false), _$ssrAttribute(\"checked\", getState(), true), `flex items-center gap-[6px] font-light before:content-[\\s] before:rounded-[2px] before:inline-block before:h-4 before:w-4 ${getState() ? \"before:bg-[#0df] hover:before:bg-[#80EBFF] before:bg-[url('/icons/check.svg')]\" : \"before:bg-[#2B2A33] hover:before:bg-[#52525E] before:outline before:outline-1 before:outline-[#7A7A81]\"} before:bg-center before:bg-norepeat`, _$ssrAttribute(\"for\", _$escape(props.id, true), false), _$escape(props.label));\n}",
+      "start": 1681131431624,
+      "end": 1681131431630
+    }
+  ],
+  "virtual": false
+}

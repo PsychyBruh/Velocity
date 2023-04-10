@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/manager/runtimeManager.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type RuntimeModifier from \"~/API/RuntimeModifier\";\nimport type Tab from \"~/API/Tab\";\nimport { patternToRegExp } from \"~/util\";\n\nconst modifiers: RuntimeModifier[] = [];\n\nexport function register(modifier: RuntimeModifier) {\n  modifiers.push(modifier);\n}\n\nexport function registerTab(tab: Tab) {\n  fireEvent(\"tabcreate\", tab);\n\n  tab.on(\"document_start\", (url: string) => {\n    modifiers.forEach((modifier) => {\n      modifier.getInjects().map(({ pattern, script }) => {\n        if (patternToRegExp(pattern).test(url)) {\n          if (tab.iframe.contentWindow) script(tab.iframe.contentWindow);\n        }\n      });\n    });\n  });\n}\n\nfunction fireEvent(event: string | symbol, ...args: any[]) {\n  modifiers.forEach((modifier) => {\n    modifier.emit(event, ...args);\n  });\n}\n",
+      "start": 1681131431953,
+      "end": 1681131432015
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { patternToRegExp } from \"~/util\";\nconst modifiers = [];\nexport function register(modifier) {\n  modifiers.push(modifier);\n}\nexport function registerTab(tab) {\n  fireEvent(\"tabcreate\", tab);\n  tab.on(\"document_start\", (url) => {\n    modifiers.forEach((modifier) => {\n      modifier.getInjects().map(({ pattern, script }) => {\n        if (patternToRegExp(pattern).test(url)) {\n          if (tab.iframe.contentWindow)\n            script(tab.iframe.contentWindow);\n        }\n      });\n    });\n  });\n}\nfunction fireEvent(event, ...args) {\n  modifiers.forEach((modifier) => {\n    modifier.emit(event, ...args);\n  });\n}\n",
+      "start": 1681131432015,
+      "end": 1681131432024
+    }
+  ],
+  "virtual": false
+}

@@ -1,0 +1,30 @@
+{
+  "id": "/workspaces/Velocity/node_modules/solid-start/root/FileRoutes.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid-start-file-system-router",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/// <reference path=\"../server/types.tsx\" />\n\n// @ts-expect-error\nvar fileRoutes = $FILE_ROUTES;\n\n/**\n * Routes are the file system based routes, used by Solid App Router to show the current page according to the URL.\n */\n\nconst FileRoutes = () => {\n  return fileRoutes;\n};\n\nexport default FileRoutes;\nexport { fileRoutes };\n",
+      "start": 1681131430714,
+      "end": 1681131430804
+    },
+    {
+      "name": "solid-start-file-system-router",
+      "result": "/// <reference path=\"../server/types.tsx\" />\n\n// @ts-expect-error\n\n  \n  import routeData0  from '/workspaces/Velocity/src/routes/index.tsx';\nimport routeData1  from '/workspaces/Velocity/src/routes/internal/history.tsx';\nimport routeData2  from '/workspaces/Velocity/src/routes/internal/newTab.tsx';\nimport routeData3  from '/workspaces/Velocity/src/routes/internal/preferences.tsx';\nimport routeData4  from '/workspaces/Velocity/src/routes/internal/view-source.tsx';\n  const fileRoutes = /*#__PURE__*/ [\n{\ncomponent: routeData0,\n path: \"/\" \n},\n{\ncomponent: routeData1,\n path: \"/internal/history\" \n},\n{\ncomponent: routeData2,\n path: \"/internal/newTab\" \n},\n{\ncomponent: routeData3,\n path: \"/internal/preferences\" \n},\n{\ncomponent: routeData4,\n path: \"/internal/view-source\" \n}\n];\n\n/**\n * Routes are the file system based routes, used by Solid App Router to show the current page according to the URL.\n */\n\nconst FileRoutes = () => {\n  return fileRoutes;\n};\n\nexport default FileRoutes;\nexport { fileRoutes };\n",
+      "start": 1681131430805,
+      "end": 1681131430805
+    },
+    {
+      "name": "solid",
+      "result": "/// <reference path=\"../server/types.tsx\" />\n\n// @ts-expect-error\n\nimport routeData0 from '/workspaces/Velocity/src/routes/index.tsx';\nimport routeData1 from '/workspaces/Velocity/src/routes/internal/history.tsx';\nimport routeData2 from '/workspaces/Velocity/src/routes/internal/newTab.tsx';\nimport routeData3 from '/workspaces/Velocity/src/routes/internal/preferences.tsx';\nimport routeData4 from '/workspaces/Velocity/src/routes/internal/view-source.tsx';\nconst fileRoutes = /*#__PURE__*/[{\n  component: routeData0,\n  path: \"/\"\n}, {\n  component: routeData1,\n  path: \"/internal/history\"\n}, {\n  component: routeData2,\n  path: \"/internal/newTab\"\n}, {\n  component: routeData3,\n  path: \"/internal/preferences\"\n}, {\n  component: routeData4,\n  path: \"/internal/view-source\"\n}];\n\n/**\n * Routes are the file system based routes, used by Solid App Router to show the current page according to the URL.\n */\n\nconst FileRoutes = () => {\n  return fileRoutes;\n};\nexport default FileRoutes;\nexport { fileRoutes };",
+      "start": 1681131430805,
+      "end": 1681131430809
+    }
+  ],
+  "virtual": false
+}

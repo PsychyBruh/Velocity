@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/API/Protocol.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { protocols, setProtocols } from \"~/data/appState\";\n\nexport default class Protocol {\n  #match: RegExp;\n  #domains: Map<string, string> = new Map<string, string>();\n  #prefix: string;\n\n  constructor(prefix: string) {\n    this.#match = new RegExp(`^${prefix}:`);\n    this.#prefix = prefix;\n\n    setProtocols([...protocols(), this]);\n  }\n\n  register(domain: string, path: string) {\n    this.#domains.set(domain, path);\n  }\n\n  find(query: string): string | undefined {\n    return (\n      this.#domains.get(query) ||\n      (this.#domains.get(\"*\")\n        ? `${this.#domains.get(\"*\")}?q=${query}`\n        : undefined)\n    );\n  }\n\n  reverse(path: string): string | undefined {\n    for (const [domain, p] of this.#domains) {\n      let match = false;\n      try {\n        if (new URL(path).pathname === p) match = true;\n      } catch {}\n      if (p === path || match) {\n        if (domain === \"*\") {\n          try {\n            return `${this.#prefix}:${new URL(path).searchParams.get(\"q\")}`;\n          } catch {}\n        }\n        return `${this.#prefix}:${domain}`;\n      }\n    }\n  }\n\n  get match(): RegExp {\n    return this.#match;\n  }\n}\n",
+      "start": 1681131425389,
+      "end": 1681131425971
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { protocols, setProtocols } from \"~/data/appState\";\nexport default class Protocol {\n  #match;\n  #domains = /* @__PURE__ */ new Map();\n  #prefix;\n  constructor(prefix) {\n    this.#match = new RegExp(`^${prefix}:`);\n    this.#prefix = prefix;\n    setProtocols([...protocols(), this]);\n  }\n  register(domain, path) {\n    this.#domains.set(domain, path);\n  }\n  find(query) {\n    return this.#domains.get(query) || (this.#domains.get(\"*\") ? `${this.#domains.get(\"*\")}?q=${query}` : void 0);\n  }\n  reverse(path) {\n    for (const [domain, p] of this.#domains) {\n      let match = false;\n      try {\n        if (new URL(path).pathname === p)\n          match = true;\n      } catch {\n      }\n      if (p === path || match) {\n        if (domain === \"*\") {\n          try {\n            return `${this.#prefix}:${new URL(path).searchParams.get(\"q\")}`;\n          } catch {\n          }\n        }\n        return `${this.#prefix}:${domain}`;\n      }\n    }\n  }\n  get match() {\n    return this.#match;\n  }\n}\n",
+      "start": 1681131425971,
+      "end": 1681131426002
+    }
+  ],
+  "virtual": false
+}

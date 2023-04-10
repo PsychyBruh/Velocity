@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/ConstrainDragAxis.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { Transformer, useDragDropContext } from \"@thisbeyond/solid-dnd\";\nimport type { JSX } from \"solid-js\";\n\nexport default function ConstrainDragAxis(): JSX.Element {\n  // We have to use any on this because solid-dnd doesn't have proper typings\n  const [, { onDragStart, onDragEnd, addTransformer, removeTransformer }] =\n    useDragDropContext() as any;\n\n  const transformer: Transformer = {\n    id: \"constrain-y-axis\",\n    order: 100,\n    callback: (transform) => ({ ...transform, y: 0 })\n  };\n\n  // We have to use any on this because solid-dnd doesn't have proper typings\n  onDragStart(({ draggable }: any) => {\n    addTransformer(\"draggables\", draggable.id, transformer);\n  });\n\n  // We have to use any on this because solid-dnd doesn't have proper typings\n  onDragEnd(({ draggable }: any) => {\n    removeTransformer(\"draggables\", draggable.id, transformer.id);\n  });\n\n  return <></>;\n}\n",
+      "start": 1681131424989,
+      "end": 1681131425617
+    },
+    {
+      "name": "solid",
+      "result": "import { useDragDropContext } from \"@thisbeyond/solid-dnd\";\nexport default function ConstrainDragAxis() {\n  // We have to use any on this because solid-dnd doesn't have proper typings\n  const [, {\n    onDragStart,\n    onDragEnd,\n    addTransformer,\n    removeTransformer\n  }] = useDragDropContext();\n  const transformer = {\n    id: \"constrain-y-axis\",\n    order: 100,\n    callback: transform => ({\n      ...transform,\n      y: 0\n    })\n  };\n\n  // We have to use any on this because solid-dnd doesn't have proper typings\n  onDragStart(({\n    draggable\n  }) => {\n    addTransformer(\"draggables\", draggable.id, transformer);\n  });\n\n  // We have to use any on this because solid-dnd doesn't have proper typings\n  onDragEnd(({\n    draggable\n  }) => {\n    removeTransformer(\"draggables\", draggable.id, transformer.id);\n  });\n  return [];\n}",
+      "start": 1681131425617,
+      "end": 1681131425622
+    }
+  ],
+  "virtual": false
+}

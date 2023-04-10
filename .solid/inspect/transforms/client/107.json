@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/SEO.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type { JSX } from \"solid-js\";\nimport { Link, Meta, Title } from \"solid-start\";\n\nexport default function SEO(): JSX.Element {\n  return (\n    <>\n      <Meta charset=\"utf-8\" />\n      <Meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n      <Meta name=\"theme-color\" content=\"#1c1b22\" />\n\n      <Title>Velocity</Title>\n      <Meta property=\"og:title\" content=\"Velocity\" />\n\n      <Link rel=\"icon\" href=\"/favicon.ico\" />\n      <Link rel=\"apple-touch-icon\" href=\"/icons/touch.png\" />\n      <Link rel=\"manifest\" href=\"/webmanifest.json\" />\n\n      <Meta name=\"robots\" content=\"index, follow\" />\n      <Meta name=\"revisit-after\" content=\"7 days\" />\n\n      <Meta\n        name=\"description\"\n        content=\"A highly customizable tabbed proxy for evading internet censorship.\"\n      />\n      <Meta\n        property=\"og:description\"\n        content=\"A highly customizable tabbed proxy for evading internet censorship.\"\n      />\n      <Meta name=\"keywords\" content=\"proxy,velocity,tabbed,proxy,unblocker\" />\n    </>\n  );\n}\n",
+      "start": 1681131423216,
+      "end": 1681131423509
+    },
+    {
+      "name": "solid",
+      "result": "import { createComponent as _$createComponent } from \"solid-js/web\";\nimport { Link, Meta, Title } from \"solid-start\";\nexport default function SEO() {\n  return [_$createComponent(Meta, {\n    charset: \"utf-8\"\n  }), _$createComponent(Meta, {\n    name: \"viewport\",\n    content: \"width=device-width, initial-scale=1\"\n  }), _$createComponent(Meta, {\n    name: \"theme-color\",\n    content: \"#1c1b22\"\n  }), _$createComponent(Title, {\n    children: \"Velocity\"\n  }), _$createComponent(Meta, {\n    property: \"og:title\",\n    content: \"Velocity\"\n  }), _$createComponent(Link, {\n    rel: \"icon\",\n    href: \"/favicon.ico\"\n  }), _$createComponent(Link, {\n    rel: \"apple-touch-icon\",\n    href: \"/icons/touch.png\"\n  }), _$createComponent(Link, {\n    rel: \"manifest\",\n    href: \"/webmanifest.json\"\n  }), _$createComponent(Meta, {\n    name: \"robots\",\n    content: \"index, follow\"\n  }), _$createComponent(Meta, {\n    name: \"revisit-after\",\n    content: \"7 days\"\n  }), _$createComponent(Meta, {\n    name: \"description\",\n    content: \"A highly customizable tabbed proxy for evading internet censorship.\"\n  }), _$createComponent(Meta, {\n    property: \"og:description\",\n    content: \"A highly customizable tabbed proxy for evading internet censorship.\"\n  }), _$createComponent(Meta, {\n    name: \"keywords\",\n    content: \"proxy,velocity,tabbed,proxy,unblocker\"\n  })];\n}",
+      "start": 1681131423509,
+      "end": 1681131423520
+    }
+  ],
+  "virtual": false
+}

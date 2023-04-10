@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/Search.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import Dropdown from \"./inputs/Dropdown\";\nimport Toggle from \"./inputs/Toggle\";\nimport type { Accessor, JSX } from \"solid-js\";\n\ninterface GeneralProps {\n  id: string;\n  active: Accessor<string>;\n}\n\nexport default function Search(props: GeneralProps): JSX.Element {\n  return (\n    <div\n      class={`w-full flex flex-col gap-5 px-7 ${\n        props.id === props.active() ? \"\" : \"hidden\"\n      }`}\n    >\n      <h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Search</h1>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Default Search Engine</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Dropdown\n            id=\"search.defaults.searchEngine\"\n            default={\"google\"}\n            values={[\"Google\", \"Bing\", \"DuckDuckGo\", \"Brave\", \"Yahoo\"]}\n            label=\"This is the default search engine used for searches.\"\n          />\n        </div>\n      </section>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Default https</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Toggle\n            id=\"search.defaults.useHttps\"\n            default={false}\n            label=\"Should Velocity use https when a protocol is not present.\"\n          />\n        </div>\n      </section>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Default Proxy</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Dropdown\n            id=\"search.defaults.proxy\"\n            default={\"ultraviolet\"}\n            values={[\"Ultraviolet\"]}\n            label=\"This is the default web proxy used when browsing the web.\"\n          />\n        </div>\n      </section>\n    </div>\n  );\n}\n",
+      "start": 1681131431077,
+      "end": 1681131431241
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { escape as _$escape } from \"solid-js/web\";\nimport { createComponent as _$createComponent } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"\", \"\\\"><h1 class=\\\"font-light text-[1.46em] leading-[1.3em]\\\">Search</h1><section><h2 class=\\\"font-semibold text-lg\\\">Default Search Engine</h2><div class=\\\"flex flex-col gap-2 my-2\\\">\", \"</div></section><section><h2 class=\\\"font-semibold text-lg\\\">Default https</h2><div class=\\\"flex flex-col gap-2 my-2\\\">\", \"</div></section><section><h2 class=\\\"font-semibold text-lg\\\">Default Proxy</h2><div class=\\\"flex flex-col gap-2 my-2\\\">\", \"</div></section></div>\"];\nimport Dropdown from \"./inputs/Dropdown\";\nimport Toggle from \"./inputs/Toggle\";\nexport default function Search(props) {\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), `w-full flex flex-col gap-5 px-7 ${props.id === props.active() ? \"\" : \"hidden\"}`, _$escape(_$createComponent(Dropdown, {\n    id: \"search.defaults.searchEngine\",\n    \"default\": \"google\",\n    values: [\"Google\", \"Bing\", \"DuckDuckGo\", \"Brave\", \"Yahoo\"],\n    label: \"This is the default search engine used for searches.\"\n  })), _$escape(_$createComponent(Toggle, {\n    id: \"search.defaults.useHttps\",\n    \"default\": false,\n    label: \"Should Velocity use https when a protocol is not present.\"\n  })), _$escape(_$createComponent(Dropdown, {\n    id: \"search.defaults.proxy\",\n    \"default\": \"ultraviolet\",\n    values: [\"Ultraviolet\"],\n    label: \"This is the default web proxy used when browsing the web.\"\n  })));\n}",
+      "start": 1681131431241,
+      "end": 1681131431248
+    }
+  ],
+  "virtual": false
+}

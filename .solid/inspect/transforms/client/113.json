@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/Keybinds.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import KeybindInput from \"./inputs/Keybind\";\nimport { Accessor, For, JSX } from \"solid-js\";\nimport type Keybind from \"~/API/Keybind\";\n\ninterface KeybindsProps {\n  id: string;\n  active: Accessor<string>;\n}\n\nexport default function Keybinds(props: KeybindsProps): JSX.Element {\n  return (\n    <div\n      class={`w-full flex flex-col gap-5 px-7 ${\n        props.id === props.active() ? \"\" : \"hidden\"\n      }`}\n    >\n      <h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Keybinds</h1>\n      <section>\n        <div class=\"flex flex-col gap-5 my-2 overflow-auto\">\n          <For each={window.parent.Velocity.getKeybinds()}>\n            {(keybind: Keybind) => <KeybindInput value={keybind} />}\n          </For>\n        </div>\n      </section>\n    </div>\n  );\n}\n",
+      "start": 1681131423967,
+      "end": 1681131424243
+    },
+    {
+      "name": "solid",
+      "result": "import { template as _$template } from \"solid-js/web\";\nimport { className as _$className } from \"solid-js/web\";\nimport { effect as _$effect } from \"solid-js/web\";\nimport { insert as _$insert } from \"solid-js/web\";\nimport { createComponent as _$createComponent } from \"solid-js/web\";\nconst _tmpl$ = /*#__PURE__*/_$template(`<div><h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Keybinds</h1><section><div class=\"flex flex-col gap-5 my-2 overflow-auto\"></div></section></div>`, 8);\nimport KeybindInput from \"./inputs/Keybind\";\nimport { For } from \"solid-js\";\nexport default function Keybinds(props) {\n  return (() => {\n    const _el$ = _tmpl$.cloneNode(true),\n      _el$2 = _el$.firstChild,\n      _el$3 = _el$2.nextSibling,\n      _el$4 = _el$3.firstChild;\n    _$insert(_el$4, _$createComponent(For, {\n      get each() {\n        return window.parent.Velocity.getKeybinds();\n      },\n      children: keybind => _$createComponent(KeybindInput, {\n        value: keybind\n      })\n    }));\n    _$effect(() => _$className(_el$, `w-full flex flex-col gap-5 px-7 ${props.id === props.active() ? \"\" : \"hidden\"}`));\n    return _el$;\n  })();\n}",
+      "start": 1681131424243,
+      "end": 1681131424267
+    }
+  ],
+  "virtual": false
+}

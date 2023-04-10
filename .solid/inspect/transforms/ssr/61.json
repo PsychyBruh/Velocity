@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/ContextMenu/Button.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type { JSX } from \"solid-js\";\n\ninterface ButtonProps {\n  text: string;\n  onClick: () => void;\n}\n\nexport default function Button(props: ButtonProps): JSX.Element {\n  return (\n    <div\n      class=\"w-full hover:bg-[#52525E] text-white text-[11px] px-2 py-1 cursor-default select-none\"\n      onClick={props.onClick}\n    >\n      {props.text}\n    </div>\n  );\n}\n",
+      "start": 1681131431238,
+      "end": 1681131431581
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { escape as _$escape } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"w-full hover:bg-[#52525E] text-white text-[11px] px-2 py-1 cursor-default select-none\\\">\", \"</div>\"];\nexport default function Button(props) {\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), _$escape(props.text));\n}",
+      "start": 1681131431582,
+      "end": 1681131431587
+    }
+  ],
+  "virtual": false
+}

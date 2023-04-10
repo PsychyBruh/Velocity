@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/manager/contentScriptManager.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { ContentScripts, Permissions } from \"webextension-manifest\";\nimport Tab from \"~/API/Tab\";\nimport { patternToRegExp } from \"~/util/\";\n\nexport type ContentScript = ContentScripts[0] & {\n  js?: Promise<string>;\n  css?: Promise<string>;\n};\n\nconst _: [ContentScript, Permissions][] = [];\n\nexport function subscribe(tab: Tab): void {\n  tab.on(\"document_start\", (url: string) => inject(tab, url));\n  tab.on(\"document_end\", (url: string) => inject(tab, url));\n  tab.on(\"document_idle\", (url: string) => inject(tab, url));\n}\n\nexport function register(\n  contentScript: ContentScript,\n  permissions: Permissions\n) {\n  _.push([contentScript, permissions]);\n}\n\nfunction inject(tab: Tab, url: string) {\n  _.forEach(([contentScript, permissions]) => {\n    // Bypass other checks if addon is requesting to inject to about:blank\n    if (!(contentScript.match_about_blank && /^about:blank/.test(url))) {\n      // Check Match\n      if (!matchAny(contentScript.matches.map(patternToRegExp), url)) return;\n      // Check Exclude Match\n      if (\n        contentScript.exclude_matches &&\n        matchAny(contentScript.exclude_matches.map(patternToRegExp), url)\n      )\n        return;\n      // Check Glob\n      if (\n        contentScript.include_globs &&\n        !matchAny(contentScript.include_globs.map(patternToRegExp), url)\n      )\n        return;\n      // Check Exclude Glob\n      if (\n        contentScript.exclude_globs &&\n        matchAny(contentScript.exclude_globs.map(patternToRegExp), url)\n      )\n        return;\n      // Check permissions\n      if (!matchAny(permissions.map(patternToRegExp), url)) return;\n    }\n\n    // Inject scripts\n    if (contentScript.js) {\n      contentScript.js.forEach(async (script) => {\n        tab.executeScript(await script);\n      });\n    }\n    if (contentScript.css) {\n      contentScript.css.forEach(async (style) => {\n        tab.addStyle(await style);\n      });\n    }\n  });\n}\n\nfunction matchAny(regexs: RegExp[], url: string) {\n  for (const regex of regexs) {\n    if (regex.test(url)) return true;\n  }\n  return false;\n}\n",
+      "start": 1681131426026,
+      "end": 1681131426627
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { patternToRegExp } from \"~/util/\";\nconst _ = [];\nexport function subscribe(tab) {\n  tab.on(\"document_start\", (url) => inject(tab, url));\n  tab.on(\"document_end\", (url) => inject(tab, url));\n  tab.on(\"document_idle\", (url) => inject(tab, url));\n}\nexport function register(contentScript, permissions) {\n  _.push([contentScript, permissions]);\n}\nfunction inject(tab, url) {\n  _.forEach(([contentScript, permissions]) => {\n    if (!(contentScript.match_about_blank && /^about:blank/.test(url))) {\n      if (!matchAny(contentScript.matches.map(patternToRegExp), url))\n        return;\n      if (contentScript.exclude_matches && matchAny(contentScript.exclude_matches.map(patternToRegExp), url))\n        return;\n      if (contentScript.include_globs && !matchAny(contentScript.include_globs.map(patternToRegExp), url))\n        return;\n      if (contentScript.exclude_globs && matchAny(contentScript.exclude_globs.map(patternToRegExp), url))\n        return;\n      if (!matchAny(permissions.map(patternToRegExp), url))\n        return;\n    }\n    if (contentScript.js) {\n      contentScript.js.forEach(async (script) => {\n        tab.executeScript(await script);\n      });\n    }\n    if (contentScript.css) {\n      contentScript.css.forEach(async (style) => {\n        tab.addStyle(await style);\n      });\n    }\n  });\n}\nfunction matchAny(regexs, url) {\n  for (const regex of regexs) {\n    if (regex.test(url))\n      return true;\n  }\n  return false;\n}\n",
+      "start": 1681131426628,
+      "end": 1681131426639
+    }
+  ],
+  "virtual": false
+}

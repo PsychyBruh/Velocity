@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/Home.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type { Accessor, JSX } from \"solid-js\";\n\ninterface HomeProps {\n  id: string;\n  active: Accessor<string>;\n}\n\nexport default function Home(props: HomeProps): JSX.Element {\n  return (\n    <div\n      class={`w-full flex flex-col gap-5 px-7 ${\n        props.id === props.active() ? \"\" : \"hidden\"\n      }`}\n    >\n      <h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Home</h1>\n    </div>\n  );\n}\n",
+      "start": 1681131431089,
+      "end": 1681131431260
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"\", \"\\\"><h1 class=\\\"font-light text-[1.46em] leading-[1.3em]\\\">Home</h1></div>\"];\nexport default function Home(props) {\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), `w-full flex flex-col gap-5 px-7 ${props.id === props.active() ? \"\" : \"hidden\"}`);\n}",
+      "start": 1681131431260,
+      "end": 1681131431263
+    }
+  ],
+  "virtual": false
+}

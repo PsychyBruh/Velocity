@@ -1,0 +1,1425 @@
+{
+  "root": "/workspaces/Velocity",
+  "modules": [
+    {
+      "id": "/workspaces/Velocity/.solid/index.html",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:build-html"
+      ],
+      "virtual": false,
+      "index": 0
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@solidjs/meta/dist/index.jsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 1
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@solidjs/router/dist/components.jsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 2
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@solidjs/router/dist/index.jsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 3
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@solidjs/router/dist/integration.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 4
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@solidjs/router/dist/lifecycle.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 5
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@solidjs/router/dist/routing.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 6
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@solidjs/router/dist/utils.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 7
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@thisbeyond/solid-dnd/dist/index.jsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 8
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@tomphttp/bare-client/dist/BareClient.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 9
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 10
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/codec-pool.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 11
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/codec-worker.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 12
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/configuration.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 13
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/constants.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 14
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/io.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 15
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/aes-crypto-stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 16
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/codec-stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 17
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/codecs/crc32.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 18
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/codecs/deflate.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 19
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/codecs/inflate.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 20
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/codecs/sjcl.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 21
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/common-crypto.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 22
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/crc32-stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 23
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/stream-adapter.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 24
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/zip-crypto-stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 25
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/streams/zip-entry-stream.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 26
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/util/cp437-decode.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 27
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/util/decode-text.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 28
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/util/default-mime-type.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 29
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/util/encode-text.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 30
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/util/mime-type.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 31
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/util/stream-codec-shim.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 32
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/zip-entry.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 33
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/zip-fs-core.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 34
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/zip-reader.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 35
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/core/zip-writer.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 36
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/z-worker-inline.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 37
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/@zip.js/zip.js/lib/zip-fs.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 38
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/color-convert/conversions.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 39
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/color-convert/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 40
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/color-convert/route.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 41
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/color-name/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 42
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/color-string/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 43
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/color/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 44
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/events/events.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 45
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/idb/build/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 46
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/idb/build/wrap-idb-value.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 47
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/is-arrayish/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 48
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/mime-db/db.json",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:json"
+      ],
+      "virtual": false,
+      "index": 49
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/mime-db/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 50
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/prism-themes/themes/prism-one-dark.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false,
+      "index": 51
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/prismjs/prism.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 52
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/simple-swizzle/index.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "commonjs"
+      ],
+      "virtual": false,
+      "index": 53
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-js/dist/solid.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 54
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-js/store/dist/store.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 55
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-js/web/dist/web.js",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback"
+      ],
+      "virtual": false,
+      "index": 56
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/data/Form.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 57
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/data/FormError.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 58
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/data/createRouteAction.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 59
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/data/createRouteData.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 60
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/data/index.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 61
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/entry-client/StartClient.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:define",
+        "vite:import-glob"
+      ],
+      "virtual": false,
+      "index": 62
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/entry-client/index.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 63
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/entry-client/mount.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:define",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false,
+      "index": 64
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/error-boundary/ErrorBoundary.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 65
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/error-boundary/index.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 66
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/index.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 67
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/islands/clientOnly.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 68
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/islands/index.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 69
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/islands/router.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 70
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/islands/server-router.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 71
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/root/Document.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 72
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/root/FileRoutes.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid-start-file-system-router",
+        "solid",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false,
+      "index": 73
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/root/InlineStyles.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid-start-file-system-router",
+        "solid",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 74
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/root/Links.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 75
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/root/Meta.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 76
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/root/Scripts.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 77
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/root/index.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 78
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/router.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 79
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/server/ServerContext.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 80
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/server/responses.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild",
+        "vite:define"
+      ],
+      "virtual": false,
+      "index": 81
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/server/types.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 82
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/session/cookie.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 83
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/session/cookieSigning.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 84
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/session/cookieStorage.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 85
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/session/cookies.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 86
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/session/index.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 87
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/session/memoryStorage.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 88
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/session/sessions.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 89
+    },
+    {
+      "id": "/workspaces/Velocity/node_modules/solid-start/types.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 90
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/AddonReader.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 91
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/Bookmark.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 92
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/ContextItem.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 93
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/History.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 94
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/Keybind.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 95
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/Protocol.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 96
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/RuntimeModifier.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 97
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/Tab.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 98
+    },
+    {
+      "id": "/workspaces/Velocity/src/API/index.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 99
+    },
+    {
+      "id": "/workspaces/Velocity/src/browser.css",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:css",
+        "vite:css-post"
+      ],
+      "virtual": false,
+      "index": 100
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/Bookmark.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 101
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/Bookmarks.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 102
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/ConstrainDragAxis.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 103
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/ContextMenu/Button.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 104
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/ContextMenu/index.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 105
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/Favicon.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 106
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/SEO.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 107
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/Tab.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 108
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/Tabs.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false,
+      "index": 109
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/Utility.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 110
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/General.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 111
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/Home.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 112
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/Keybinds.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 113
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/NavButton.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 114
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/Search.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 115
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/inputs/Dropdown.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 116
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/inputs/Keybind.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 117
+    },
+    {
+      "id": "/workspaces/Velocity/src/components/internal/preferences/inputs/Toggle.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 118
+    },
+    {
+      "id": "/workspaces/Velocity/src/data/appState.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 119
+    },
+    {
+      "id": "/workspaces/Velocity/src/entry-client.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 120
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/addonManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 121
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/clickManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 122
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/contentScriptManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 123
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/contextManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 124
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/keybindManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 125
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/protocolManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 126
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/runtimeManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 127
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/tabManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 128
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/themeManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 129
+    },
+    {
+      "id": "/workspaces/Velocity/src/manager/xenosManager.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 130
+    },
+    {
+      "id": "/workspaces/Velocity/src/root.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 131
+    },
+    {
+      "id": "/workspaces/Velocity/src/routes/index.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false,
+      "index": 132
+    },
+    {
+      "id": "/workspaces/Velocity/src/routes/internal/history.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid",
+        "vite:build-import-analysis"
+      ],
+      "virtual": false,
+      "index": 133
+    },
+    {
+      "id": "/workspaces/Velocity/src/routes/internal/newTab.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 134
+    },
+    {
+      "id": "/workspaces/Velocity/src/routes/internal/preferences.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 135
+    },
+    {
+      "id": "/workspaces/Velocity/src/routes/internal/view-source.tsx",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "solid"
+      ],
+      "virtual": false,
+      "index": 136
+    },
+    {
+      "id": "/workspaces/Velocity/src/scripts/addonStoreModifier.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 137
+    },
+    {
+      "id": "/workspaces/Velocity/src/scripts/registerKeybinds.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 138
+    },
+    {
+      "id": "/workspaces/Velocity/src/scripts/registerProtocols.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 139
+    },
+    {
+      "id": "/workspaces/Velocity/src/util/index.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 140
+    },
+    {
+      "id": "/workspaces/Velocity/src/util/registerSW.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 141
+    },
+    {
+      "id": "/workspaces/Velocity/src/util/url.ts",
+      "deps": [],
+      "plugins": [
+        "vite:load-fallback",
+        "vite:esbuild"
+      ],
+      "virtual": false,
+      "index": 142
+    },
+    {
+      "id": "vite/modulepreload-polyfill",
+      "deps": [],
+      "plugins": [
+        "vite:modulepreload-polyfill"
+      ],
+      "virtual": true,
+      "index": 143
+    }
+  ]
+}

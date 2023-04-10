@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/manager/protocolManager.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { protocols } from \"~/data/appState\";\n\nexport default {\n  find: (url: string) => {\n    for (const protocol of protocols()) {\n      if (protocol.match.test(url)) {\n        const domain = url.replace(protocol.match, \"\");\n        return protocol.find(domain);\n      }\n    }\n  },\n  reverse: (url: string) => {\n    for (const protocol of protocols()) {\n      if (protocol.reverse(url)) {\n        return protocol.reverse(url);\n      }\n    }\n  }\n};\n",
+      "start": 1681131431387,
+      "end": 1681131431773
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { protocols } from \"~/data/appState\";\nexport default {\n  find: (url) => {\n    for (const protocol of protocols()) {\n      if (protocol.match.test(url)) {\n        const domain = url.replace(protocol.match, \"\");\n        return protocol.find(domain);\n      }\n    }\n  },\n  reverse: (url) => {\n    for (const protocol of protocols()) {\n      if (protocol.reverse(url)) {\n        return protocol.reverse(url);\n      }\n    }\n  }\n};\n",
+      "start": 1681131431773,
+      "end": 1681131431933
+    }
+  ],
+  "virtual": false
+}

@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/API/History.ts",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "vite:esbuild"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import type Tab from \"./Tab\";\nimport EventEmitter from \"events\";\nimport type { IDBPDatabase } from \"idb\";\nimport { openDB } from \"idb\";\nimport protocols from \"~/manager/protocolManager\";\nimport type HistoryEntry from \"~/types/HistoryEntry\";\n\nexport default class History extends EventEmitter {\n  #db?: IDBPDatabase;\n\n  constructor() {\n    super();\n    this.#init().then(() => {\n      this.emit(\"ready\");\n    });\n  }\n\n  async #init(): Promise<IDBPDatabase> {\n    const db = await openDB(\"history\", 1, {\n      upgrade(db) {\n        db.createObjectStore(\"history\", { keyPath: \"id\" });\n      }\n    });\n\n    this.#db = db;\n\n    return db;\n  }\n\n  async add(tab: Tab): Promise<any> {\n    if (!this.#db) return;\n\n    if (!tab.url() || protocols.find(tab.url())) return;\n\n    const tx = this.#db.transaction(\"history\", \"readwrite\");\n    const store = tx.objectStore(\"history\");\n\n    return await store.put({\n      id: tab.historyId,\n      timestamp: Date.now(),\n      url: tab.url() || \"about:newTab\",\n      title: tab.title(),\n      favicon: tab.icon()\n    });\n  }\n\n  async get(): Promise<HistoryEntry[]> {\n    if (!this.#db) return [];\n\n    const tx = this.#db.transaction(\"history\", \"readonly\");\n    const store = tx.objectStore(\"history\");\n\n    const history = await store.getAll();\n\n    return history;\n  }\n\n  async delete(key: number): Promise<void> {\n    if (!this.#db) return;\n\n    const tx = this.#db.transaction(\"history\", \"readwrite\");\n    const store = tx.objectStore(\"history\");\n\n    return await store.delete(key);\n  }\n\n  async clear(): Promise<void> {\n    if (!this.#db) return;\n\n    const tx = this.#db.transaction(\"history\", \"readwrite\");\n    const store = tx.objectStore(\"history\");\n\n    return await store.clear();\n  }\n}\n",
+      "start": 1681131431340,
+      "end": 1681131431769
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import EventEmitter from \"events\";\nimport { openDB } from \"idb\";\nimport protocols from \"~/manager/protocolManager\";\nexport default class History extends EventEmitter {\n  #db;\n  constructor() {\n    super();\n    this.#init().then(() => {\n      this.emit(\"ready\");\n    });\n  }\n  async #init() {\n    const db = await openDB(\"history\", 1, {\n      upgrade(db2) {\n        db2.createObjectStore(\"history\", { keyPath: \"id\" });\n      }\n    });\n    this.#db = db;\n    return db;\n  }\n  async add(tab) {\n    if (!this.#db)\n      return;\n    if (!tab.url() || protocols.find(tab.url()))\n      return;\n    const tx = this.#db.transaction(\"history\", \"readwrite\");\n    const store = tx.objectStore(\"history\");\n    return await store.put({\n      id: tab.historyId,\n      timestamp: Date.now(),\n      url: tab.url() || \"about:newTab\",\n      title: tab.title(),\n      favicon: tab.icon()\n    });\n  }\n  async get() {\n    if (!this.#db)\n      return [];\n    const tx = this.#db.transaction(\"history\", \"readonly\");\n    const store = tx.objectStore(\"history\");\n    const history = await store.getAll();\n    return history;\n  }\n  async delete(key) {\n    if (!this.#db)\n      return;\n    const tx = this.#db.transaction(\"history\", \"readwrite\");\n    const store = tx.objectStore(\"history\");\n    return await store.delete(key);\n  }\n  async clear() {\n    if (!this.#db)\n      return;\n    const tx = this.#db.transaction(\"history\", \"readwrite\");\n    const store = tx.objectStore(\"history\");\n    return await store.clear();\n  }\n}\n",
+      "start": 1681131431770,
+      "end": 1681131431933
+    }
+  ],
+  "virtual": false
+}

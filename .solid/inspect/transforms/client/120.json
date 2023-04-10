@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/entry-client.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { StartClient, mount } from \"solid-start/entry-client\";\n\nmount(() => <StartClient />, document);\n",
+      "start": 1681131422601,
+      "end": 1681131422643
+    },
+    {
+      "name": "solid",
+      "result": "import { createComponent as _$createComponent } from \"solid-js/web\";\nimport { StartClient, mount } from \"solid-start/entry-client\";\nmount(() => _$createComponent(StartClient, {}), document);",
+      "start": 1681131422644,
+      "end": 1681131422736
+    }
+  ],
+  "virtual": false
+}

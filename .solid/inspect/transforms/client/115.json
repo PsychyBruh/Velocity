@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/internal/preferences/Search.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import Dropdown from \"./inputs/Dropdown\";\nimport Toggle from \"./inputs/Toggle\";\nimport type { Accessor, JSX } from \"solid-js\";\n\ninterface GeneralProps {\n  id: string;\n  active: Accessor<string>;\n}\n\nexport default function Search(props: GeneralProps): JSX.Element {\n  return (\n    <div\n      class={`w-full flex flex-col gap-5 px-7 ${\n        props.id === props.active() ? \"\" : \"hidden\"\n      }`}\n    >\n      <h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Search</h1>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Default Search Engine</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Dropdown\n            id=\"search.defaults.searchEngine\"\n            default={\"google\"}\n            values={[\"Google\", \"Bing\", \"DuckDuckGo\", \"Brave\", \"Yahoo\"]}\n            label=\"This is the default search engine used for searches.\"\n          />\n        </div>\n      </section>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Default https</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Toggle\n            id=\"search.defaults.useHttps\"\n            default={false}\n            label=\"Should Velocity use https when a protocol is not present.\"\n          />\n        </div>\n      </section>\n      <section>\n        <h2 class=\"font-semibold text-lg\">Default Proxy</h2>\n        <div class=\"flex flex-col gap-2 my-2\">\n          <Dropdown\n            id=\"search.defaults.proxy\"\n            default={\"ultraviolet\"}\n            values={[\"Ultraviolet\"]}\n            label=\"This is the default web proxy used when browsing the web.\"\n          />\n        </div>\n      </section>\n    </div>\n  );\n}\n",
+      "start": 1681131423918,
+      "end": 1681131424189
+    },
+    {
+      "name": "solid",
+      "result": "import { template as _$template } from \"solid-js/web\";\nimport { className as _$className } from \"solid-js/web\";\nimport { effect as _$effect } from \"solid-js/web\";\nimport { insert as _$insert } from \"solid-js/web\";\nimport { createComponent as _$createComponent } from \"solid-js/web\";\nconst _tmpl$ = /*#__PURE__*/_$template(`<div><h1 class=\"font-light text-[1.46em] leading-[1.3em]\">Search</h1><section><h2 class=\"font-semibold text-lg\">Default Search Engine</h2><div class=\"flex flex-col gap-2 my-2\"></div></section><section><h2 class=\"font-semibold text-lg\">Default https</h2><div class=\"flex flex-col gap-2 my-2\"></div></section><section><h2 class=\"font-semibold text-lg\">Default Proxy</h2><div class=\"flex flex-col gap-2 my-2\"></div></section></div>`, 22);\nimport Dropdown from \"./inputs/Dropdown\";\nimport Toggle from \"./inputs/Toggle\";\nexport default function Search(props) {\n  return (() => {\n    const _el$ = _tmpl$.cloneNode(true),\n      _el$2 = _el$.firstChild,\n      _el$3 = _el$2.nextSibling,\n      _el$4 = _el$3.firstChild,\n      _el$5 = _el$4.nextSibling,\n      _el$6 = _el$3.nextSibling,\n      _el$7 = _el$6.firstChild,\n      _el$8 = _el$7.nextSibling,\n      _el$9 = _el$6.nextSibling,\n      _el$10 = _el$9.firstChild,\n      _el$11 = _el$10.nextSibling;\n    _$insert(_el$5, _$createComponent(Dropdown, {\n      id: \"search.defaults.searchEngine\",\n      \"default\": \"google\",\n      values: [\"Google\", \"Bing\", \"DuckDuckGo\", \"Brave\", \"Yahoo\"],\n      label: \"This is the default search engine used for searches.\"\n    }));\n    _$insert(_el$8, _$createComponent(Toggle, {\n      id: \"search.defaults.useHttps\",\n      \"default\": false,\n      label: \"Should Velocity use https when a protocol is not present.\"\n    }));\n    _$insert(_el$11, _$createComponent(Dropdown, {\n      id: \"search.defaults.proxy\",\n      \"default\": \"ultraviolet\",\n      values: [\"Ultraviolet\"],\n      label: \"This is the default web proxy used when browsing the web.\"\n    }));\n    _$effect(() => _$className(_el$, `w-full flex flex-col gap-5 px-7 ${props.id === props.active() ? \"\" : \"hidden\"}`));\n    return _el$;\n  })();\n}",
+      "start": 1681131424189,
+      "end": 1681131424209
+    }
+  ],
+  "virtual": false
+}

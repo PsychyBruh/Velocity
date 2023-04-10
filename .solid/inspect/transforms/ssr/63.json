@@ -1,0 +1,23 @@
+{
+  "id": "/workspaces/Velocity/src/components/Favicon.tsx",
+  "deps": [],
+  "plugins": [
+    "vite:load-fallback",
+    "solid"
+  ],
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import BareClient from \"@tomphttp/bare-client\";\nimport { createEffect, createSignal, onCleanup } from \"solid-js\";\nimport type { Accessor, JSX } from \"solid-js\";\nimport { bareClient, setBareClient } from \"~/data/appState\";\n\ninterface FaviconProps {\n  src: Accessor<string>;\n}\n\nexport default function Favicon(props: FaviconProps): JSX.Element {\n  const [icon, setIcon] = createSignal<string | undefined>(\n    /^data:/.test(props.src()) ? undefined : props.src()\n  );\n\n  createEffect(() => {\n    const abort = new AbortController();\n\n    if (/^data:/.test(props.src())) return setIcon(props.src());\n\n    try {\n      new URL(props.src());\n    } catch {\n      return;\n    }\n\n    if (new URL(props.src()).origin === location.origin)\n      return setIcon(props.src());\n\n    if (!bareClient()) {\n      const server =\n        typeof window.__uv$config.bare === \"string\"\n          ? window.__uv$config.bare\n          : window.__uv$config.bare[\n              Math.floor(Math.random() * window.__uv$config.bare.length)\n            ];\n      setBareClient(new BareClient(new URL(server, location.toString())));\n    }\n\n    const promise = (async () => {\n      try {\n        const outgoing = await (bareClient() as BareClient).fetch(props.src(), {\n          signal: abort.signal\n        });\n        const blob = await outgoing.blob();\n        if (!/image/.test(blob.type)) {\n          setIcon(\"/icons/earth.svg\");\n        } else {\n          const obj = URL.createObjectURL(blob);\n          setIcon(obj);\n          return obj;\n        }\n      } catch {}\n    })();\n\n    onCleanup(() => {\n      abort.abort();\n      promise?.then((obj) => (obj ? URL.revokeObjectURL(obj) : null));\n    });\n  });\n\n  return (\n    <div\n      class={`w-full h-full bg-cover bg-no-repeat`}\n      style={`background-image: url(\"${icon()}\")`}\n    ></div>\n  );\n}\n",
+      "start": 1681131431067,
+      "end": 1681131431227
+    },
+    {
+      "name": "solid",
+      "result": "import { ssr as _$ssr } from \"solid-js/web\";\nimport { ssrStyle as _$ssrStyle } from \"solid-js/web\";\nimport { ssrHydrationKey as _$ssrHydrationKey } from \"solid-js/web\";\nconst _tmpl$ = [\"<div\", \" class=\\\"\", \"\\\" style=\\\"\", \"\\\"></div>\"];\nimport BareClient from \"@tomphttp/bare-client\";\nimport { createEffect, createSignal, onCleanup } from \"solid-js\";\nimport { bareClient, setBareClient } from \"~/data/appState\";\nexport default function Favicon(props) {\n  const [icon, setIcon] = createSignal(/^data:/.test(props.src()) ? undefined : props.src());\n  createEffect(() => {\n    const abort = new AbortController();\n    if (/^data:/.test(props.src())) return setIcon(props.src());\n    try {\n      new URL(props.src());\n    } catch {\n      return;\n    }\n    if (new URL(props.src()).origin === location.origin) return setIcon(props.src());\n    if (!bareClient()) {\n      const server = typeof window.__uv$config.bare === \"string\" ? window.__uv$config.bare : window.__uv$config.bare[Math.floor(Math.random() * window.__uv$config.bare.length)];\n      setBareClient(new BareClient(new URL(server, location.toString())));\n    }\n    const promise = (async () => {\n      try {\n        const outgoing = await bareClient().fetch(props.src(), {\n          signal: abort.signal\n        });\n        const blob = await outgoing.blob();\n        if (!/image/.test(blob.type)) {\n          setIcon(\"/icons/earth.svg\");\n        } else {\n          const obj = URL.createObjectURL(blob);\n          setIcon(obj);\n          return obj;\n        }\n      } catch {}\n    })();\n    onCleanup(() => {\n      abort.abort();\n      promise?.then(obj => obj ? URL.revokeObjectURL(obj) : null);\n    });\n  });\n  return _$ssr(_tmpl$, _$ssrHydrationKey(), `w-full h-full bg-cover bg-no-repeat`, _$ssrStyle(`background-image: url(\"${icon()}\")`));\n}",
+      "start": 1681131431227,
+      "end": 1681131431238
+    }
+  ],
+  "virtual": false
+}
