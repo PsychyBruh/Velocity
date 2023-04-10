@@ -12,11 +12,11 @@
   background-position: var(--additional-backgrounds-alignment, right top);
   background-repeat: var(--additional-backgrounds-tiling, no-repeat);
   background-size: auto;
-  border-bottom: 1px solid var(--toolbar-bottom-separator, rgba(0, 0, 0, 0.3));
+  border-bottom: 1px solid var(--toolbar-bottom-separator, rgba(255, 255, 255, 0.4));
 }
 
 #browser-toolbar {
-  border-top: 1px solid var(--toolbar-top-separator, rgba(0, 0, 0, 0.3));
+  border-top: 1px solid var(--toolbar-top-separator, rgba(48, 47, 47, 0.3));
 }
 
 #tabs {
